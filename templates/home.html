@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WELCOME TO E-KIDS</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='home.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='glyphicons.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.min.css')}}">
+</head>
+<body>
+    <div class="background">
+        
+        <video src="{{url_for('static',filename='background1.mp4')}}" controls loop="true" autoplay muted type="video/mp4" class="video"></video>
+    </div>
+    <div class="mainpanel" id='mainpanel'>
+        <div class="menu" id="menu">
+            <ul class="menuitems" id="menuitems">
+                <li class="menuitem">Home</li>
+                <li class="menuitem" id="learn">Challenges
+                    <span class= "glyphicon glyphicon-plus" id="icon"></span>
+                    <ul class="coll" id="catlearn">
+                        <li id="rand"> Random Challenge</li>
+                        <li id="a"> A's Challenge</li>
+                        <li id="b"> B's Challenge</li>
+                        <li id="c"> C's Challenge</li>
+                    </ul>
+                </li>
+                <li class="menuitem" id="Courses">Courses
+                    <span class= "glyphicon glyphicon-plus" id="icon"></span>
+                    <ul class="coll" id="catcourse">
+                        <li>Grade 0ne</li>
+                        <li>Grade Two</li>
+                        <li>Grade Three</li>
+                        <li>Grade Four</li>
+                    </ul>
+                </li>
+                <li class="menuitem">About</li>
+                <li class="menuitem"><a href="{{url_for('videos')}}">Videos</a></li>
+            </ul>
+        </div>
+    
+        <div class="content container-fluid" id="content">
+                <button id="btnmenu" class="btn">
+                        <span class="glyphicon glyphicon-list"></span>
+                </button>
+
+                <table class="letters">
+                        <tr class="letterrow" id="letterrow">
+                            <!--{% set list=['a','o','y','b'] %}
+                            {% for i in list %}
+                            {% set path='images/'+i+'.png' %}
+                            <td class="lettercontainer" id='lettercomtainer'>
+                                <img src="{{url_for('static',filename=path)}}" class="letter">
+                            </td>
+                            {% endfor %}
+                               -->     
+                        </tr>
+                </table>
+                <div class="welcome" id='welcome'>
+                    <h2 class="intro" id="intro">  WELCOME TO E-KIDS WHERE LEARNING IS FUN</h2>
+                    <h3 id="message">To start learning please press the start button below</h3>
+                    <button class="btn  btn-success" id="start">START</button>
+                </div>
+                <div class="object" id="object">
+                    <!--pictures-->
+                </div>
+                <table class="mytable">
+                    <tr class="dashrow" id="dashrow">
+                        <!--{% for i in list %}
+                        <td>
+                            <span class="dash"></span>
+                        </td>
+                        {% endfor %}
+                          -->      
+                    </tr>
+                </table>
+        </div>
+    </div>
+    <script src="{{url_for('static',filename='jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename='bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename='socket.io.js')}}"></script>
+    <script src="{{url_for('static',filename='home.js')}}"></script>
+</body>
+</html>
